@@ -29,8 +29,15 @@
 		$password = $con->real_escape_string($_POST["password"]);
 
 		//3. query
-		$sql = "INSERT INTO `user` (`username`, `nome`, `cognome`, `password`) VALUES ('$username', '$name', '$surname', '$password');";
+		$sql = "INSERT INTO `user` (`username`, `nome`, `cognome`, `password`) VALUES ('$user', '$name', '$surname', '$password');";
 		$data= _eseguiQuery($con, $sql);
+
+		// 4. creazione session e restituzione risultato
+		session_start();
+		$_SESSION["username"]=$data[0]['username'];
+		$_SESSION["scadenza"] = time() + SCADENZA;
+		setcookie(session_name(), session_id(), time() + SCADENZA, "/");
+		echo(json_encode(array("ris"=>"ok")));
 	}
 	//close
 	$con->close();

@@ -30,6 +30,9 @@
                 check=false;
             }
         }
+        if(check){
+            inviaRq();
+        }
 
         return check;
     });
@@ -52,6 +55,23 @@
                 return false;
             }
         }
+    }
+
+    function inviaRq(){
+        let user = $('[name="username"]').val();
+		// md5 restituisce una word esadecimale, quindi è obbligatorio .toString()
+		let pass = CryptoJS.MD5($('[name="pass"]').val()).toString();
+		let _richiestaSignUp= inviaRichiesta("POST", "../php/login.php", { "username":user, "password":pass });
+		_richiestaSignUp.fail(function(jqXHR, test_status, str_error) {
+			if (jqXHR.status == 401) { // unauthorized
+				_lblErrore.show();
+			} else
+				error(jqXHR, test_status, str_error)
+		});
+		_richiestaSignUp.done(function(data) {
+			if(data.ris=="ok") // test inutile
+			    window.location.href = "../index.html";
+		});
     }
 
     function showValidate(input) {

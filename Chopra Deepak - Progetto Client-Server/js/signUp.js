@@ -30,22 +30,10 @@
                 check=false;
             }
         }
-        let user=_username.val();
-		// md5 restituisce una word esadecimale, quindi è obbligatorio .toString()
-		let pass=CryptoJS.MD5(_password.val()).toString();
-		let _richiestaLogin= inviaRichiesta("POST", "../php/signUp.php", { "username":user, "password":pass } );
-		_richiestaLogin.fail(function(jqXHR, test_status, str_error) {
-			if (jqXHR.status == 401) { // unauthorized
-				_lblErrore.show();
-			} else
-				error(jqXHR, test_status, str_error)
-		});
-		_richiestaLogin.done(function(data) {
-			if(data.ris=="ok") // test inutile
-				window.location.href = "index.html"
-		});
-
-        return check;
+        if(check){
+            inviaRq(input);
+        }
+        return check;       
     });
 
 
@@ -66,6 +54,25 @@
                 return false;
             }
         }
+    }
+
+    function inviaRq(){
+        let user = $('[name="username"]').val();
+        let uName = $('[name="nome"]').val();
+        let uSurname = $('[name="surname"]').val();
+		// md5 restituisce una word esadecimale, quindi è obbligatorio .toString()
+		let pass=CryptoJS.MD5($('[name="pass"]')).toString();
+		let _richiestaSignUp= inviaRichiesta("POST", "../php/signUp.php", { "username":user, "name": uName, "surname": uSurname, "password":pass });
+		_richiestaSignUp.fail(function(jqXHR, test_status, str_error) {
+			if (jqXHR.status == 401) { // unauthorized
+				_lblErrore.show();
+			} else
+				error(jqXHR, test_status, str_error)
+		});
+		_richiestaSignUp.done(function(data) {
+			if(data.ris=="ok") // test inutile
+			    window.location.href = "../index.html";
+		});
     }
 
     function showValidate(input) {

@@ -1,6 +1,6 @@
 <?php
     
-	define ("SCADENZA", 30);   // tempo espresso in sec
+	define ("SCADENZA", 600);   // tempo espresso in sec
 	
 	function _connection($dbName){
 		define('DBHOST', 'localhost');
