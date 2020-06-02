@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-	
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js" charset="utf8"></script>
@@ -39,7 +39,10 @@
 			<a class="nav-link" href="#" title="Contact Me">Contact Me</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="#" title="Login">Login</a>
+			<a class="nav-link" href="pagine/login.html" title="Login">
+				Login
+				<i class="fa fa-sign-in" aria-hidden="true"></i>
+			</a>
 		  </li>
 		</ul>
 	  </div>
@@ -48,15 +51,19 @@
 	<header>
 		<div id="headerLogo"></div>
 		<nav id="navbarFiltri">
-			
+			<label>
+				Tipo proprietà:
+				<input type="checkbox" name="type1" value="Bilocale">
+				<input type="checkbox" name="type2" value="Trilocale">
+				<input type="checkbox" name="type3" value="Garage">
+			</label>
 		</nav>
 	</header>
 	<section id="container">
 		<div id="sectionHome">
-
 		</div>
 		<aside id="map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d360118.90047273063!2d7.10906661048499!3d45.15816382111391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47884595931bc5ff%3A0x305e67d473c7d70!2sCitt%C3%A0%20Metropolitana%20di%20Torino!5e0!3m2!1sit!2sit!4v1590620731003!5m2!1sit!2sit" width="1172" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d360118.90047273063!2d7.10906661048499!3d45.15816382111391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47884595931bc5ff%3A0x305e67d473c7d70!2sCitt%C3%A0%20Metropolitana%20di%20Torino!5e0!3m2!1sit!2sit!4v1590620731003!5m2!1sit!2sit" width="1172" height="100%" frameborder="0" style="border:0;border-radius: 10px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 		</aside>
 	</section>
 	<footer>

@@ -28,6 +28,19 @@ $(document).ready(function() {
 					background: 'url(images/imgProprieta/' + proprieta["idProprieta"] + '.jpg)', 
 				}).appendTo(_card);
 				_card.appendTo("#sectionHome");
+				let _info = $("<div>").addClass("info"),
+					_title = $("<div>"),
+					_prezzo = $("<div>"),
+					_desc = $("<div>"),
+					_acquista = $("<button>Acquista</button>");
+				_title.html(proprieta["Tipo"] + ", " + proprieta["Piano"]).appendTo(_info);
+				_prezzo.html(parseFloat(proprieta["Prezzo"]).toLocaleString() + " €").appendTo(_info);
+				_prezzo.css({
+					"font-size": "20pt",
+				});
+				_desc.html(proprieta["Indirizzo"]).appendTo(_info);
+				_acquista.addClass("btnAcquista").appendTo(_desc);
+				_info.appendTo(_card);
 			}
 		});
 	}
