@@ -40,7 +40,7 @@ Per ciascun tipo di file abbiamo una cartella specifica:
 
 ## Bug e problemi
 - A volte l'applicazione non esegue correttamente le query di update(nessun errore però la tabella non viene aggiornata)
-- Per quanto riguarda la mappa, il codice perchè era motlo lungo e non funzionava del tutto, ho avuto problemi ad utilizzare l'Api di google maps e quindi per evitare che l'applicazione si blocasse per questo motivo ho preferito togliere il codice. Naturalmente proverò ancora a risolvere e se riesco in tempo le manderò la versione finale
+- Per quanto riguarda la mappa, il codice era motlo lungo e non funzionava del tutto, ho avuto problemi ad utilizzare l'Api di google maps e quindi per evitare che l'applicazione si blocasse per questo motivo ho preferito togliere il codice. Naturalmente proverò ancora a risolvere e se riesco in tempo le manderò la versione finale
 
 ## Team sviluppatori:
 > 4B Info - Vallauri Fossano Italy
