@@ -4,6 +4,7 @@
 ## Descrizione
 >A seguito della quarantena è stato assegnato questo compito come metodo di valutazione, lo scopo era quello di realizzare un'applicazione client-server con le operazioni di base.
 Il progetto è una riproduzione di un sito all'interno di un gioco, principalmente svolge le funzioni di un'agenzia immobiliare
+Il funzionamento è spiegato meglio nel README dentro la cartellad del progetto
 
 ## Software neccesari:
 * Visual Studio Code
