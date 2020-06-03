@@ -19,6 +19,7 @@ L'operazione di acquista come detto è possibile solo si è loggati come cliente
 
 ### Registrazione nuovo utente
 Per la registrazione, nella pagina di login, abbiamo sotto al button di sumbit un link alla pagina di registrazione. Dopo la registrazione, se è andato tutto a buon fine, l'utente viene riportato alla pagina di login per accedere con i nuovi dati(ho preferito questo modo così da verificare effettivamente che il database sia stato aggioranato).
+![imgFigurativa](images/imgSignUp.PNG)
 
 ## Database
 Il database ha 3 tabelle:
