@@ -31,11 +31,14 @@
 		// 4. creazione session e restituzione risultato
 		else{
 			session_start();
+			echo(json_encode($data));
 			$_SESSION["cUser"]=$data[0]['cUser'];
 			$_SESSION["scadenza"] = time() + SCADENZA;
-			setcookie(session_name(), session_id(), time()+SCADENZA, "/");
+			setcookie(session_name(), session_id(), time() + SCADENZA, "/");
+
+			//header("location:index.html");
 			//echo(json_encode({"ris":"ok"}))
-			echo(json_encode(array("ris"=>"ok")));			
+			//echo(json_encode(array("ris"=>"ok")));			
 		}
 		// 5. close
 		$con->close();		

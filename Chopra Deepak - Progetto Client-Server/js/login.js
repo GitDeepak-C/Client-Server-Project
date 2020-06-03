@@ -1,8 +1,9 @@
 
 (function ($) {
     "use strict";
+    let _lblErrore = $("#lblError");
 
-
+    _lblErrore.hide();
     /*==================================================================
     [ Focus input ]*/
     $('.input100').each(function(){
@@ -21,7 +22,9 @@
     [ Validate ]*/
     var input = $('.validate-input .input100');
 
-    $('.validate-form').on('submit',function(){
+    $('.validate-form').on('submit',function(e){
+        e.preventDefault(); //stop reload page on form sumbit
+
         var check = true;
 
         for(var i=0; i<input.length; i++) {
@@ -66,11 +69,11 @@
 			if (jqXHR.status == 401) { // unauthorized
 				_lblErrore.show();
 			} else
-				error(jqXHR, test_status, str_error)
+				error(jqXHR, test_status, str_error);
 		});
 		_richiestaSignUp.done(function(data) {
-			if(data.ris=="ok") // test inutile
-			    window.location.href = "../index.html";
+			//if(data.ris=="ok") // test inutile
+			window.location.href = "../index.html";
 		});
     }
 
@@ -84,6 +87,7 @@
         var thisAlert = $(input).parent();
 
         $(thisAlert).removeClass('alert-validate');
+        _lblErrore.hide();
     }
     
     /*==================================================================

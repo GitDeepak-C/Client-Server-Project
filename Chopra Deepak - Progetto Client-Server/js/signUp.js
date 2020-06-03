@@ -21,7 +21,9 @@
     [ Validate ]*/
     var input = $('.validate-input .input100');
 
-    $('.validate-form').on('submit',function(){
+    $('.validate-form').on('submit',function(e){
+        e.preventDefault(); //stop reload page on form sumbit
+
         var check = true;
 
         for(var i=0; i<input.length; i++) {
@@ -61,17 +63,14 @@
         let uName = $('[name="nome"]').val();
         let uSurname = $('[name="surname"]').val();
 		// md5 restituisce una word esadecimale, quindi è obbligatorio .toString()
-		let pass=CryptoJS.MD5($('[name="pass"]')).toString();
+		let pass=CryptoJS.MD5($('[name="pass"]').val()).toString();
 		let _richiestaSignUp= inviaRichiesta("POST", "../php/signUp.php", { "username":user, "name": uName, "surname": uSurname, "password":pass });
 		_richiestaSignUp.fail(function(jqXHR, test_status, str_error) {
-			if (jqXHR.status == 401) { // unauthorized
-				_lblErrore.show();
-			} else
 				error(jqXHR, test_status, str_error)
 		});
 		_richiestaSignUp.done(function(data) {
-			if(data.ris=="ok") // test inutile
-			    window.location.href = "../index.html";
+			//if(data.ris=="ok") // test inutile
+			window.location.href = "../index.html";
 		});
     }
 

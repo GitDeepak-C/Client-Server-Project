@@ -5,6 +5,10 @@ $(document).ready(function() {
 	$("#banner").addClass("shrink");
 
 	initProprieties();
+	let rq = inviaRichiesta("GET", "php/checkSession.php");
+	rq.done(function(user){
+		console.log(user);
+	});
 
 	function initMap(){
 		let location = {lat: 45.068371, lng: 7.683070};
@@ -44,5 +48,16 @@ $(document).ready(function() {
 			}
 		});
 	}
+
+	$("#btnLogout").on("click", function(){
+		let _richiestaLogout = inviaRichiesta("POST", "../php/logout.php");		
+		_richiestaLogout.fail(error);
+		_richiestaLogout.done(function (data) { 
+			if (data["ok"]==true){
+				/*alert("Sei stato disconnesso correttamente");	
+			    window.location.href="login.html";*/
+			}
+		});
+	})
 	
 });
