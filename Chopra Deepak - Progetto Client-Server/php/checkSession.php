@@ -11,14 +11,10 @@
 	$id = $_SESSION["cUser"];
 	
 	// 3. Query
-    $sql="select username from user where username = $id;";
-	$user = _eseguiQuery($con, $sql);
-	/*$sql = "SELECT filiali.cFiliale, filiali.Nome FROM conti, filiali WHERE conti.cFiliale = filiali.cFiliale AND conti.cCorrentista = $id;";
-    $data = _eseguiQuery($con, $sql);*/
+    $sql ="select * from user where cUser = $id;";
+	$data = _eseguiQuery($con, $sql);
 	
-	// $user è un vettore enumerativo del tipo [{"nome":"rossi"}, etc] contenente però un slo record
-	//$data = array("name"=>$user[0]["nome"], "data"=>$data);
-	echo json_encode($user);
+	echo (json_encode($data));
     
 	// 4. close
     $con->close();

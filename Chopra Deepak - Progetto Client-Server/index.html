@@ -22,7 +22,7 @@
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top" id="banner">
 		<div class="container">
 	  <!-- Brand -->
-	  <a class="navbar-brand" href="#" title="Logo"><img src="images/DC-removebg-preview.png"></a>
+	  <a class="navbar-brand" href="index.html" title="Logo"><img src="images/DC-removebg-preview.png"></a>
 	
 	  <!-- Toggler/collapsibe Button -->
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -33,15 +33,23 @@
 	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
 		<ul class="navbar-nav ml-auto">
 		  <li class="nav-item">
-			<a class="nav-link" href="#" title="Home">Home</a>
+			<a class="nav-link" href="index.html" title="Home">Home</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="#" title="Contact Me">Contact Me</a>
+			<a class="nav-link" href="pagine/contatti.html" title="Contact Me">Contact Me</a>
 		  </li>
-		  <li class="nav-item">
+		  <li class="nav-item" id="noLog">
 			<a class="nav-link" href="pagine/login.html" title="Login">
 				Login
 				<i class="fa fa-sign-in" aria-hidden="true"></i>
+			</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" id="userLog" href="#" title="User"></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" id="logOut" href="#" title="Log out">
+				<i class="fa fa-sign-out"></i>
 			</a>
 		  </li>
 		</ul>
@@ -51,12 +59,30 @@
 	<header>
 		<div id="headerLogo"></div>
 		<nav id="navbarFiltri">
-			<label>
+			<div>
 				Tipo proprietà:
-				<input type="checkbox" name="type1" value="Bilocale">
-				<input type="checkbox" name="type2" value="Trilocale">
-				<input type="checkbox" name="type3" value="Garage">
-			</label>
+				<label for="type1" class="lbl">
+					<input type="radio" id="type1" name="chk" value="All" checked="true">
+					<span class="checkmarkRdo"></span>All
+				</label>
+				<label for="type2" class="lbl">
+					<input type="radio" id="type2" name="chk" value="Bilocale">
+					<span class="checkmarkRdo"></span>Bilocale
+				</label>
+				<label for="type3" class="lbl">
+					<input type="radio" id="type3" name="chk" value="Trilocale">
+					<span class="checkmarkRdo"></span>Trilocale
+				</label>
+				<label for="type4" class="lbl">
+					<input type="radio" id="type4" name="chk" value="Quadrilocale">
+					<span class="checkmarkRdo"></span>Quadrilocale
+				</label>
+				<label for="type5" class="lbl">
+					<input type="radio" id="type5" name="chk" value="Garage">
+					<span class="checkmarkRdo"></span>Garage
+				</label>
+				<button id="btnCancelP">Cancel prenotations</button>
+			</div>
 		</nav>
 	</header>
 	<section id="container">

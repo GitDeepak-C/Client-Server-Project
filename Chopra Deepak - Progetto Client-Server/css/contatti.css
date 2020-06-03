@@ -1,0 +1,179 @@
+/******Aggiunta Font*********/
+@font-face {
+	font-family: 'Hanken Grotesk';
+	src: local('Hanken Grotesk'),   /* nome del font */
+		 url('../font/Hanken Grotesk/WEB/HankenGrotesk-Regular.woff') format('woff'),
+		 url('../font/Hanken Grotesk/OTF/HankenGrotesk-Regular.otf') format('otf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Hanken GroteskBold';
+	src: local('Hanken Grotesk'),   /* nome del font */
+		 url('../font/Hanken Grotesk/WEB/HankenGrotesk-Semibold.woff') format('woff'),
+		 url('../font/Hanken Grotesk/OTF/HankenGrotesk-Semibold.otf') format('otf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+html{
+     scroll-behavior: smooth;
+}
+
+body{
+    background: url(../images/contatti.jpg) no-repeat fixed;
+    background-size: cover;
+    font-family: 'Hanken Grotesk', Arial, Helvetica, sans-serif;
+    color: #ddd;
+}
+
+::selection {
+    background-color: #83ba43;
+    color: white;
+  }
+
+/***BARRA DI NAVIGAZIONE***********************************/
+
+header nav{
+    padding: 2px 20px 2px 20px;
+    background-color: rgba(0,0,0,0.7);
+    /*background-color: #222;*/
+    box-shadow: 1px 2px 2px #000;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3000;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li{
+    margin: 0 3%;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: .1em;
+    /*background-color: rgba(0,0,0,0.7);*/
+    text-align: center;
+    text-decoration-line: none;
+}
+
+nav ul li a:hover,nav ul li a:focus,nav ul li a:active{
+    transform: scale(1.2);
+    transition: all 1s;
+    color: #fff;
+    /*background-color: rgba(0,0,0,0.7);*/
+    background: #222;
+    outline: 1px solid #fff;
+}
+
+/***PARTE FORM**************************************************/
+section div:nth-of-type(1){
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    top: 7em;
+    left: 0;
+}
+
+section div:nth-of-type(1) iframe{
+    width: 100%;
+    height: 100%;
+}
+
+#contatti{
+    width: 60%;
+    padding: 0 2%;
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: rgba(235, 235, 235);
+    border-radius: 10px; 
+    color: #000;
+    margin-bottom: 2%;
+    overflow: auto;
+}
+
+#contatti h4{
+    font-family: 'Hanken GroteskBold';
+    font-size: 15pt;
+    text-align: center;
+}
+
+#contatti form{
+    transition: all 4s ease-in-out;
+}
+
+.form-control{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #444;
+    margin-bottom: 16px;
+}
+
+input{
+    height: 45px;
+}
+
+form .sumbit{
+    font-family: 'Hanken GroteskBold';
+    background: #555;
+    color: #fff;
+    letter-spacing: .2em;
+    margin-top: 20px;
+}
+
+form .sumbit:hover{
+    cursor: pointer;
+    background: #444;
+    color: #aaa;
+    transition: all .5s;
+}
+
+@media (min-width: 500px) and (max-width: 800px){
+    #contatti{
+        width: 80%;
+        padding: 0 2%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: rgba(235, 235, 235);
+        border-radius: 10px; 
+        color: #000;
+        margin-bottom: 2%;
+    }
+}
+
+@media (max-width: 1400px){
+    #contatti{
+        width: 80%;
+        padding: 0 2%;
+        position: absolute;
+        top: 60%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: rgba(235, 235, 235);
+        border-radius: 10px; 
+        color: #000;
+        margin-bottom: 2%;
+    }
+}

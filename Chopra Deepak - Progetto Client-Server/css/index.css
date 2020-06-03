@@ -100,9 +100,9 @@ header{
 }
 
 @media  screen and (max-width: 1920px) {
-    #headerLogo{
+    /*#headerLogo{
 		margin-left: 40%;
-	}
+	}*/
 }
 
 @media  screen and (max-width: 1600px) {
@@ -115,6 +115,86 @@ header{
 	height: 20%;
 	background: #333;
 	color: #eee;
+}
+
+#navbarFiltri div{
+	margin: 0 auto;
+	width: fit-content;
+	font-size: 17pt;
+	font-family: Poppins-Regular, sans-serif;
+	padding-top: 0.4em;
+}
+
+#navbarFiltri div label{
+	margin-left: 0.9em;
+}
+
+.lbl {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.lbl input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmarkRdo{
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.lbl:hover input ~ .checkmark, .lbl:hover input ~ .checkmarkRdo {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.lbl input:checked ~ .checkmark , .lbl input:checked ~ .checkmarkRdo{
+    background-color: #83ba43;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after, .checkmarkRdo:after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.lbl input:checked ~ .checkmark:after {
+    display: block;
+}
+
+#btnCancelP{
+	background: #83ba43;
+	color: #2c2e31;
+	padding: 2px 5px;
+	margin-left: 0.4em;
+	font-size: 14pt;
+	border-radius: 5px;
+	border: 1px solid #83ba43;
+}
+
+.cancelP{
+	background: #FF0000;
+	width: 20px;
+	height: 20px;
+	margin-left: 2px;
 }
 
 /***********************SECTION*********************************************/
@@ -154,6 +234,7 @@ header{
 	float: right;
 	border-radius: 5px;
 	margin-bottom: 10px;
+	cursor: pointer;
 }
 
 .btnAcquista:hover, .btnAcquista:active, .btnAcquista:focus{
@@ -163,11 +244,22 @@ header{
     transition: all 1s;
 }
 
+.btnPrenotato{
+	width: 8em;
+	height: 1.5em;
+	background: #FF4C4C;
+	border: 1px solid #FF0000;
+	float: right;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
 .cardImg{
 	width: 100%;
 	height: 17em;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 #map{

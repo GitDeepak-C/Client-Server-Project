@@ -69,8 +69,7 @@
 				error(jqXHR, test_status, str_error)
 		});
 		_richiestaSignUp.done(function(data) {
-			//if(data.ris=="ok") // test inutile
-			window.location.href = "../index.html";
+			window.location.href = "../pagine/login.html";
 		});
     }
 
